@@ -17,7 +17,7 @@ public class Calendar {
 		
 		int maxDay = getMaxDaysOfMonth(month);
 		
-		for(int i =1; i<maxDay; i++){
+		for(int i =1; i<maxDay+1; i++){
 			System.out.printf("%3d",i);
 			if(i%7==0){
 				System.out.println();
@@ -25,31 +25,31 @@ public class Calendar {
 		}
 	}
 
-	public static void main(String[] args) {
-		
-
-		String PROMPT ="cal> ";
-		Scanner scanner = new Scanner(System.in);
-
-		while (true) {
-			System.out.println("월을 입력하세요.");
-			System.out.print(PROMPT);
-			int month = scanner.nextInt();
-			
-			if(month>12){
-				continue;
-			}
-			
-			if(month != -1){
-				Calendar.printCalendar(2017, month);
-				System.out.println();
-			}else{
-				System.out.println("Have a nice day!");
-				break;
-			}
-		}
-
-		scanner.close();
-	}
+//	public static void main(String[] args) {
+//		
+//
+//		String PROMPT ="cal> ";
+//		Scanner scanner = new Scanner(System.in);
+//
+//		while (true) {
+//			System.out.println("월을 입력하세요.");
+//			System.out.print(PROMPT);
+//			int month = scanner.nextInt();
+//			
+//			if(month>12){
+//				continue;
+//			}
+//			
+//			if(month != -1){
+//				Calendar.printCalendar(2017, month);
+//				System.out.println();
+//			}else{
+//				System.out.println("Have a nice day!");
+//				break;
+//			}
+//		}
+//
+//		scanner.close();
+//	}
 
 }
