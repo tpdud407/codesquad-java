@@ -17,16 +17,34 @@ public class Calendar {
 		return MAX_DAYS[month - 1];
 	}
 	
-	public static void printCalendar(int year,int month){
+	public static void printCalendar(int year,int month,int weekday){
 		System.out.printf("   <<%4d년%3d월>>\n ",year,month);
 		System.out.println("  일 월 화 수 목 금 토");
 		System.out.println(" --------------------");
 		
-		int maxDay = getMaxDaysOfMonth(year,month);
+		for(int i =0; i<weekday; i++){
+			System.out.print("   ");
+		}
 		
-		for(int i =1; i<maxDay+1; i++){
+		int maxDay = getMaxDaysOfMonth(year,month);
+		int count = 7-weekday;
+		int delim= count;
+		
+		if(count < 7){
+			delim=count;
+		}else{
+			delim=0;
+		}
+		
+		for(int i = 1; i<=count; i++){
 			System.out.printf("%3d",i);
-			if(i%7==0){
+		}
+		System.out.println();
+		count++;
+		
+		for(int i =count; i<=maxDay; i++){
+			System.out.printf("%3d",i);
+			if(i%7 == delim){
 				System.out.println();
 			}
 		}
